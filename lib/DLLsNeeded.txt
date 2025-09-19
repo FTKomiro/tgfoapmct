@@ -1,0 +1,5 @@
+BepInEx.dll
+UnityEngine.CoreModule.dll
+UnityEngine.dll
+UnityEngine.InputLegacyModule.dll
+UnityEngine.InputModule.dll
