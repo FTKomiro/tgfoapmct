@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using UnityEngine;
 
 [BepInPlugin("KomiroFT.PhotoModeCharacterToggler", "PhotoModeCharacterToggler", "1.0.1")]
@@ -10,12 +10,14 @@ public class Plugin : BaseUnityPlugin
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            if (pmct == null)
-                pmct = FindEnviroment();
-            if (pmct != null)
-                pmct.SetActive(!pmct.activeSelf);
+            var env = FindEnviroment(); 
+            if (env != null)
+                env.SetActive(!env.activeSelf);
+            else
+                Logger.LogInfo("Enviroment not found (probably not in Photo Mode).");
         }
     }
+
 
     GameObject FindEnviroment()
     {
